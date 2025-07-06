@@ -14,7 +14,7 @@ services:
       - app-network
     # Remove depends_on since db is now external RDS
     # Add health check if needed
-   
+
 
   frontend-user:
     build: ./frontend-user
