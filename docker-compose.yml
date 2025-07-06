@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ebanking.csp6kmicm81r.us-east-1.rds.amazonaws.com:5432/${DB_NAME}
+      - SPRING_DATASOURCE_USERNAME=ebanking
+      - SPRING_DATASOURCE_PASSWORD=thelastofus
+    networks:
+      - app-network
+    # Remove depends_on since db is now external RDS
+    # Add health check if needed
+   
+
+  frontend-user:
+    build: ./frontend-user
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  frontend-admin:
+    build: ./frontend-admin
+    ports:
+      - "81:81"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+# Remove the db service since you're using RDS
+# No need for volumes since RDS handles persistence
+
+networks:
+  app-network:
+    driver: bridge
