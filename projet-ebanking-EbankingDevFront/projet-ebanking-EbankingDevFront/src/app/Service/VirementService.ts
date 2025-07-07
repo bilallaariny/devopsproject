@@ -8,7 +8,7 @@ import {VirementDTO} from '../model/dto/VirementDTO';
   providedIn: 'root'
 })
 export class VirementService {
-  private readonly apiUrl = 'http://localhost:8080/api/virements';
+  private readonly apiUrl = 'http://54.160.238.38:8080/api/virements';
 
   constructor(private http: HttpClient) {
 

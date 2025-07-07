@@ -26,7 +26,7 @@ export class AuthService {
   // Method to get user info (since user_id is also in HttpOnly cookie)
   register(dto: Partial<UserRegisterDTO>): Observable<UserResDTO> {
     return this.http.post<any>(
-      'http://localhost:8080/api/auth/register',
+      'http://54.160.238.38:8080/api/auth/register',
       dto,
       { withCredentials: true }
      );
@@ -34,7 +34,7 @@ export class AuthService {
 
   login(dto: Partial<UserLoginDTO>): Observable<UserResDTO> {
     return this.http.post<any>(
-      'http://localhost:8080/api/auth/authenticate',
+      'http://54.160.238.38:8080/api/auth/authenticate',
       dto,
       { withCredentials: true }
     );
@@ -42,7 +42,7 @@ export class AuthService {
   logout(): void {
     // Call backend logout endpoint to clear HttpOnly cookies
     this.http.post(
-      'http://localhost:8080/api/auth/logout',
+      'http://54.160.238.38:8080/api/auth/logout',
       {},
       { withCredentials: true }
     ).subscribe({

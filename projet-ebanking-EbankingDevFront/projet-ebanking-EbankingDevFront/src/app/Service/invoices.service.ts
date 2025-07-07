@@ -8,7 +8,7 @@ import { InvoicePayDTO } from '../model/dto/InvoicePayDTO';
   providedIn: 'root'
 })
 export class InvoicesService {
-  private invoiceUrl = 'http://localhost:8080/api/invoices';
+  private invoiceUrl = 'http://54.160.238.38:8080/api/invoices';
 
   constructor(private http: HttpClient) {}
 

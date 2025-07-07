@@ -8,13 +8,13 @@ export class ClientService {
 
   constructor(private http :HttpClient) { }
   validateclient(id:string){
-    return this.http.post(`http://localhost:8080/e_banking_2_war_exploded/api/clients/validate/${id}`,{}, { withCredentials: true })
+    return this.http.post(`http://54.160.238.38:8080/e_banking_2_war_exploded/api/clients/validate/${id}`,{}, { withCredentials: true })
   }
   getallclients(){
-   return this.http.get(`http://localhost:8080/e_banking_2_war_exploded/api/clients`, { withCredentials: true });
+   return this.http.get(`http://54.160.238.38:8080/e_banking_2_war_exploded/api/clients`, { withCredentials: true });
   }
   updateclient(id:string,client:any,headers:HttpHeaders){
-    return this.http.put(`http://localhost:8080/e_banking_2_war_exploded/api/clients/update/client/${id}`,client, { withCredentials: true ,headers: headers});
+    return this.http.put(`http://54.160.238.38:8080/e_banking_2_war_exploded/api/clients/update/client/${id}`,client, { withCredentials: true ,headers: headers});
 
   }
 }

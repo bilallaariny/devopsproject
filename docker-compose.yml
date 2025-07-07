@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build: ./backend/projet-ebanking-ebankingSecuredDev
     ports:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=dev
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://ebanking.csp6kmicm81r.us-east-1.rds.amazonaws.com:5432/${DB_NAME}
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ebanking.csp6kmicm81r.us-east-1.rds.amazonaws.com:5432/ebanking
       - SPRING_DATASOURCE_USERNAME=ebanking
       - SPRING_DATASOURCE_PASSWORD=thelastofus
     networks:
@@ -17,7 +17,7 @@ services:
 
 
   frontend-user:
-    build: ./frontend-user
+    build: ./frontend-user/projet-ebanking-EbankingDevFront
     ports:
       - "80:80"
     depends_on:
@@ -26,7 +26,7 @@ services:
       - app-network
 
   frontend-admin:
-    build: ./frontend-admin
+    build: ./frontend-admin/projet-ebanking-admin-front
     ports:
       - "81:81"
     depends_on:

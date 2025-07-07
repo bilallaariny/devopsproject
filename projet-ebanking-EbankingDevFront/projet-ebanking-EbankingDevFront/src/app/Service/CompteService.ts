@@ -10,7 +10,7 @@ import {CCourantResDTO} from '../model/dto/CCouurantResDTO';
   providedIn: 'root'
 })
 export class CompteService {
-  private readonly apiUrl = 'http://localhost:8080/api/comptes'; // adapte si nécessaire
+  private readonly apiUrl = 'http://54.160.238.38:8080/api/comptes'; // adapte si nécessaire
 
   constructor(private http: HttpClient) {}
 

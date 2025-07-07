@@ -8,7 +8,7 @@ import { MaybeClientWithEmailTokenDTO } from '../model/dto/MaybeClientWithEmailT
   providedIn: 'root'
 })
 export class RegisterVerification {
-  private readonly apiUrl = 'http://localhost:8080/api/maybeClient';
+  private readonly apiUrl = 'http://54.160.238.38:8080/api/maybeClient';
 
   constructor(private http: HttpClient) {}
 

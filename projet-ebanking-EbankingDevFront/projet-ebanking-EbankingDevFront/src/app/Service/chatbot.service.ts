@@ -10,7 +10,7 @@ import { Injectable } from "@angular/core";
 
 
 export class chatbotService{
-    private chatbotUrl = "http://localhost:8080/api/chat";
+    private chatbotUrl = "http://54.160.238.38:8080/api/chat";
     constructor(private http: HttpClient) {}
 
 

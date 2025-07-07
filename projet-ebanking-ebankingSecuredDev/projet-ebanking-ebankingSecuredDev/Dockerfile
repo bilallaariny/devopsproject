@@ -1,19 +1,18 @@
+# Build stage - Using verified available Maven image
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn package -DskipTests
 
-# Utilise une image compatible Tomcat 10.1.x et Java 21
-FROM tomcat:10.1.34-jdk21
+# Run stage - Using verified Tomcat image
+FROM tomcat:10.1.24-jdk21-temurin-jammy
 WORKDIR /usr/local/tomcat/webapps
-# Supprime les applications par défaut
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Alternative if you want to keep the original filename:
- COPY --from=build /target/bank-project.war /usr/local/tomcat/webapps/backend.war
+# Correct path to WAR file (note: /app/target/ from build stage)
+COPY --from=build /app/target/bank-project.war ./ROOT.war
 
-# Expose port 8080 (Tomcat's default)
 EXPOSE 8080
-
-
-
-# Tomcat will automatically deploy the WAR file on startup
 CMD ["catalina.sh", "run"]
-
-

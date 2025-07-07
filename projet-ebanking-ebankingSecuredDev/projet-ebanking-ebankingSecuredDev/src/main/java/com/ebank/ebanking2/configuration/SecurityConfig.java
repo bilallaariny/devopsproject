@@ -83,8 +83,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOriginPatterns(Arrays.asList("*"));
-        configuration.addAllowedOrigin("http://localhost:4200"); // User frontend
-        configuration.addAllowedOrigin("http://localhost:4201");
+        configuration.addAllowedOrigin("http://54.160.238.38"); // User frontend
+        configuration.addAllowedOrigin("http://54.160.238.38:81");
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
