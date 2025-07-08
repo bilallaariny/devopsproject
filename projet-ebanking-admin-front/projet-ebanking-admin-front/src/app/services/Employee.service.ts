@@ -6,7 +6,7 @@ import { EmployeeResDTO } from '../model/EmployeeResDTO';
 
 @Injectable({ providedIn: 'root' })
 export class EmployeesService {
-  private apiUrl = `http://54.160.238.38:8080/e_banking_2_war_exploded/api/employees`;
+  private apiUrl = `http://54.160.238.38:8080/api/employees`;
 
   constructor(private http: HttpClient) {}
 

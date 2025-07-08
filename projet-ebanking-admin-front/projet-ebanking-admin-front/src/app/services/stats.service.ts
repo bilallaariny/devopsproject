@@ -14,7 +14,7 @@ import {CurrentAccountsSummaryStats} from '../model/CurrentAccountsSummaryStats'
 })
 export class StatsService {
 
-  private apiUrl = `http://54.160.238.38:8080/e_banking_2_war_exploded/api/stats`;
+  private apiUrl = `http://54.160.238.38:8080/api/stats`;
 
   constructor(private http: HttpClient) {}
 

@@ -15,7 +15,7 @@ import org.springframework.security.access.method.P;
 
 @RestController
 @RequestMapping("api/recharges")
-@CrossOrigin(origins = "http://localhost:4200/")
+
 public class RechargeController {
 
     @Autowired

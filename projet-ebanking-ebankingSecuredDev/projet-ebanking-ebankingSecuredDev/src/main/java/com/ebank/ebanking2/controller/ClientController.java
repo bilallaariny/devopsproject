@@ -20,7 +20,6 @@ import org.springframework.security.access.method.P;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("api/clients")
 public class ClientController {
