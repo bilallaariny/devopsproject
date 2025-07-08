@@ -25,7 +25,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/virements")
-
+@CrossOrigin(origins = "http://54.160.238.38")
 public class VirementController {
 
     @Autowired

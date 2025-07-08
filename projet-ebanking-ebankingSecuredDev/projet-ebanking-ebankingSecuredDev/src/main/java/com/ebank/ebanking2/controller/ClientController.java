@@ -22,6 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/clients")
+@CrossOrigin(origins = "http://54.160.238.38")
 public class ClientController {
 
     @Autowired
