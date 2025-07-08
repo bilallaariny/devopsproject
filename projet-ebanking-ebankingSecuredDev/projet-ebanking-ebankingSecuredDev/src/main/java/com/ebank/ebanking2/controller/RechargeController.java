@@ -29,7 +29,7 @@ public class RechargeController {
     }
 
     @PreAuthorize("hasRole('CLIENT') and @compteService.getClientByCompteRib(#rechargeDTO.rib).id == authentication.principal.id")
-    @PostMapping("effectuer")
+    @PostMapping("/effectuer")
     public ResponseEntity<RechargeResDTO> recharger(@RequestBody @P("rechargeDTO") RechargeDTO rechargeDTO) {
         RechargeResDTO rechargeResDTO=rechargeService.recharger(rechargeDTO);
         return  new ResponseEntity<>(rechargeResDTO, HttpStatus.OK);

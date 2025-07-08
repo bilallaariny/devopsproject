@@ -24,14 +24,14 @@ public class CompteController {
     private CompteRepo compteRepo;
 
     @PreAuthorize("hasRole('EMPLOYEE')")
-    @GetMapping("{status}/{type}")
+    @GetMapping("/{status}/{type}")
     public ResponseEntity<List<?>> getAll(@PathVariable("status") String status, @PathVariable("type") String type) {
         return ResponseEntity.ok(compteService.get(type,status));
     }
 
 
     @PreAuthorize("hasRole('EMPLOYEE') or (hasRole('CLIENT') and @compteService.getClientByCompteRib(#rib).id == authentication.principal.id)")
-    @GetMapping("solde/{rib}")
+    @GetMapping("/solde/{rib}")
     public double getSolde(@PathVariable("rib") @P("rib") String rib){
         return compteService.getSolde(rib);
     }

@@ -15,11 +15,11 @@ public class MaybeClientController {
     @Autowired
     private MaybeClientService maybeClientService;
 
-    @PostMapping("emailSend/token")
+    @PostMapping("/emailSend/token")
     public ResponseEntity<Boolean> generateTokenByEmail(@RequestBody MaybeClientDTO maybeClientDTO){
         return new ResponseEntity<>(maybeClientService.generateTokenByEmail(maybeClientDTO), HttpStatus.OK);
     }
-    @PostMapping("checkToken")
+    @PostMapping("/checkToken")
     public ResponseEntity<Boolean> checkEmailToken(@RequestBody MaybeClientWithEmailTokenDTO maybeClientWithEmailTokenDTO){
         return new ResponseEntity<>(maybeClientService.checkEmailToken(maybeClientWithEmailTokenDTO), HttpStatus.OK);
     }

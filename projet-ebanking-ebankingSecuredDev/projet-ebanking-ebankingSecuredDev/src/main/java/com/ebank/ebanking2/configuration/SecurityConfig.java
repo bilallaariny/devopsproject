@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -58,6 +59,7 @@ public class SecurityConfig {
                 .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**","/api/maybeClient/**", "api/clients/registry/**")
                         .permitAll()
                         .requestMatchers("/api/employees/**")

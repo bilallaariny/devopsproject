@@ -122,42 +122,42 @@ public class ClientController {
 
     }
 
-    @PostMapping("registry/emailSend/recoveryToken")
+    @PostMapping("/registry/emailSend/recoveryToken")
     public ResponseEntity<Boolean> generateRecoveryPasswordToken(@RequestBody EmailDTO emailDTO){
         return new ResponseEntity<>(clientService.generateRecoveryPasswordToken(emailDTO.getEmail()), HttpStatus.OK);
     }
 //    @PreAuthorize("hasRole('EMPLOYEE') or (hasRole('CLIENT') and @clientService.getUserByEmail(#changePasswordDTO.email).id = authentication.principal.id)")
-    @PutMapping("registry/changePassword")
+    @PutMapping("/registry/changePassword")
     public ResponseEntity<Boolean> changePassword(@RequestBody @P("changePasswordDTO") ChangePasswordDTO changePasswordDTO){
         return new ResponseEntity<>(clientService.changePassword(changePasswordDTO), HttpStatus.OK);
     }
 
-    @PostMapping("registry/checkRecoveryToken")
+    @PostMapping("/registry/checkRecoveryToken")
     public ResponseEntity<Boolean> checkRecoveryToken(@RequestBody CheckRecoveryTokenDTO checkRecoveryTokenDTO){
         return new ResponseEntity<>(clientService.checkRecoveryToken(checkRecoveryTokenDTO), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('CLIENT') and #clientId == authentication.principal.id")
-    @PostMapping("verifiytoken/ecode/{clientId}")
+    @PostMapping("/verifiytoken/ecode/{clientId}")
     public boolean validateTokenForEcode(@RequestParam("ecodeToken") String ecodeToken,
                                          @PathVariable("clientId") @P("clientId") long clientId) throws MessagingException {
         return tokenmailservice.validateToken(ecodeToken, clientId);
     }
     // Vérifier si le token (Ecode) saisi est sécurisé
     @PreAuthorize("hasRole('CLIENT')")
-    @GetMapping("isValid")
+    @GetMapping("/isValid")
     public ResponseEntity<Boolean> validateSecureEcode(@RequestParam("ecode") String ecode) {
         boolean valid = EcodeValidator.isSecureCode(ecode);
         return new ResponseEntity<>(valid, HttpStatus.OK);
     }
     @PreAuthorize("hasRole('CLIENT') and #ecodeDTO.clientId == authentication.principal.id")
-    @PostMapping("saveEcode")
+    @PostMapping("/saveEcode")
     public boolean saveEcode(@RequestBody @P("ecodeDTO") EcodeDTO ecodeDTO) throws MessagingException {
         return clientService.saveEcode(ecodeDTO);
     }
 
     @PreAuthorize("hasRole('CLIENT') and #ecodeDTO.clientId == authentication.principal.id")
-    @PostMapping("verifyEcode")
+    @PostMapping("/verifyEcode")
     public boolean verifyEcode(@RequestBody @P("ecodeDTO") EcodeDTO ecodeDTO) throws MessagingException {
         return clientService.verifyEcode(ecodeDTO);
     }
