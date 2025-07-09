@@ -17,8 +17,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/stats")
 @CrossOrigin(origins = {
-        "http://13.222.157.135:4200",
-        "http://13.222.157.135:4100"
+        "http://13.222.157.135:80",
+        "http://13.222.157.135:81"
 })
 public class StatsController {
     @Autowired
