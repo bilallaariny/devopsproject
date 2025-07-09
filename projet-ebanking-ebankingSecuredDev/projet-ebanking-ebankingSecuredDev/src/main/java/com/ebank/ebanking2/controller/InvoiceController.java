@@ -15,7 +15,10 @@ import org.springframework.security.access.method.P;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://54.160.238.38")
+@CrossOrigin(origins = {
+        "http://13.222.157.135:4200",
+        "http://13.222.157.135:4100"
+})
 @RequestMapping("/api/invoices")
 public class InvoiceController {
 

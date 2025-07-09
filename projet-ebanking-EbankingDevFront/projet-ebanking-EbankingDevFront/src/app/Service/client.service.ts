@@ -10,7 +10,7 @@ import { ClientResDTO } from '../model/dto/ClientResDTO';
 })
 export class ClientService {
 
-  private clientUrl = 'http://54.160.238.38:8080/api/clients';
+  private clientUrl = 'http://13.222.157.135:8080/api/clients';
 
   constructor(private http: HttpClient) {}
 

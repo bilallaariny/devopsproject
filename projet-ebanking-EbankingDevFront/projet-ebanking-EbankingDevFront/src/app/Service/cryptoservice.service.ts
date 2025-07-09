@@ -14,7 +14,7 @@ export class CryptoserviceService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post(`http://54.160.238.38:8080/crypto?rib=${rib}`,achatdto,  // Serialize payload to JSON
+    return this.http.post(`http://13.222.157.135:8080/crypto?rib=${rib}`,achatdto,  // Serialize payload to JSON
       { headers, withCredentials: true });
 
   }
@@ -25,7 +25,7 @@ export class CryptoserviceService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post(`http://54.160.238.38:8080/crypto/vendre?rib=${rib}`,achatdto,  // Serialize payload to JSON
+    return this.http.post(`http://13.222.157.135:8080/crypto/vendre?rib=${rib}`,achatdto,  // Serialize payload to JSON
       { headers, withCredentials: true });
 
   }

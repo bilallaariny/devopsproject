@@ -12,10 +12,17 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://54.160.238.38")
+@CrossOrigin(origins = {
+        "http://13.222.157.135:4200",
+        "http://13.222.157.135:4100"
+})
 public class AuthController {
     @Autowired
     AuthService authService;
+    @PostMapping("/health")
+    public String registerClient() {
+        return "hey";
+    }
     @PostMapping("/register")
     public ResponseEntity<?> registerClient(HttpServletRequest request, HttpServletResponse response, @RequestBody ClientDTO user) {
         return authService.register(request, response, user);

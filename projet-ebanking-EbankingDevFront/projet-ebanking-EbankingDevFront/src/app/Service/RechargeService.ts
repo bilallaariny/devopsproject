@@ -6,7 +6,7 @@ import {map, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class RechargeService {
-  private readonly apiUrl = 'http://54.160.238.38:8080/api/recharges';
+  private readonly apiUrl = 'http://13.222.157.135:8080/api/recharges';
 
   constructor(private http: HttpClient) {
 

@@ -9,7 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://54.160.238.38")
+@CrossOrigin(origins = {
+        "http://13.222.157.135:4200",
+        "http://13.222.157.135:4100"
+})
 @RequestMapping("/api/maybeClient")
 public class MaybeClientController {
     @Autowired

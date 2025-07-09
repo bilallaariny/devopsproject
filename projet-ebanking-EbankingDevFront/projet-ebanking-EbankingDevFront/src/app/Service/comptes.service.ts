@@ -10,7 +10,7 @@ import { CompteResDTO } from '../model/dto/CompteResDTO';
 })
 export class ComptesService {
 
-  private comptesUrl = 'http://54.160.238.38:8080/api/comptes';
+  private comptesUrl = 'http://13.222.157.135:8080/api/comptes';
   constructor(private http: HttpClient) {}
 
 

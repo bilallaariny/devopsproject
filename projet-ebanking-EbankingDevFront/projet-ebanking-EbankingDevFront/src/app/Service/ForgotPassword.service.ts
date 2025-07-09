@@ -10,7 +10,7 @@ import { ChangePasswordDTO } from '../model/dto/ChangePasswordDTO';
   providedIn: 'root'
 })
 export class ForgotPassword {
-  private readonly apiUrl = 'http://54.160.238.38:8080/api/clients';
+  private readonly apiUrl = 'http://13.222.157.135:8080/api/clients';
 
   constructor(private http: HttpClient) {}
 

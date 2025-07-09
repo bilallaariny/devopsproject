@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://54.160.238.38")
+@CrossOrigin(origins = {
+        "http://13.222.157.135:4200",
+        "http://13.222.157.135:4100"
+})
 public class Cryptocontroller {
 
     private Cryptoservice cryptoservice;

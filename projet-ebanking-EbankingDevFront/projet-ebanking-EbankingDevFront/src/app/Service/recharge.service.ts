@@ -14,7 +14,7 @@ import { RechargeResDTO } from '../model/dto/RechargeResDTO';
 })
 export class RechargeService {
 
-  private baseUrl = 'http://54.160.238.38:8080/api';
+  private baseUrl = 'http://13.222.157.135:8080/api';
 
 
   constructor(private http: HttpClient) { }

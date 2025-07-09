@@ -42,7 +42,7 @@ export class AuthService {
   logout(): void {
     // Call backend logout endpoint to clear HttpOnly cookies
     this.http.post(
-      'http://54.160.238.38:8080/api/auth/logout',
+      'http://13.222.157.135:8080/api/auth/logout',
       {},
       { withCredentials: true }
     ).subscribe({

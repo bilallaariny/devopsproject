@@ -30,9 +30,9 @@ public class AppConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
 
         // ✅ Read from environment variables passed by Docker Compose
-        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
-        dataSource.setUsername(System.getenv("SPRING_DATASOURCE_USERNAME"));
-        dataSource.setPassword(System.getenv("SPRING_DATASOURCE_PASSWORD"));
+        dataSource.setUrl("jdbc:postgresql://ebanking.csp6kmicm81r.us-east-1.rds.amazonaws.com:5432/ebanking");
+        dataSource.setUsername("ebanking");
+        dataSource.setPassword("thelastofus");
 
         return dataSource;
     }

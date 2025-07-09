@@ -17,7 +17,7 @@ export class ChatService {
 
    }
 
-  private baseUrl = 'http://54.160.238.38:8080';
+  private baseUrl = 'http://13.222.157.135:8080';
 
   sendMessage(message: string): Observable<ChatResponse> {
     return this.http.post<ChatResponse>(`${this.baseUrl}/api/chatbot`, { message }, { withCredentials: true });

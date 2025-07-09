@@ -22,7 +22,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/clients")
-@CrossOrigin(origins = "http://54.160.238.38")
+@CrossOrigin(origins = {
+        "http://13.222.157.135:4200",
+        "http://13.222.157.135:4100"
+})
 public class ClientController {
 
     @Autowired
